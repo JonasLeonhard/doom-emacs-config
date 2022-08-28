@@ -39,10 +39,43 @@
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
 (setq display-line-numbers-type 'relative)
 
+;; startup
+(custom-set-variables '(initial-frame-alist (quote ((fullscreen . maximized))))) ;; start emacs maximized
+
+;; wich-keys
+(setq wich-key-idle-delay 0.5)
+
+;; replace evil- in wichkeys
+(setq which-key-allow-multiple-replacements t)
+(after! which-key
+  (pushnew!
+   which-key-replacement-alist
+   '(("" . "\\`+?evil[-:]?\\(?:a-\\)?\\(.*\\)") . (nil . "◂\\1"))
+   '(("\\`g s" . "\\`evilem--?motion-\\(.*\\)") . (nil . "◃\\1"))
+   ))
+
+;; keybinds
+(global-set-key [(C k)] 'drag-stuff-up)
+(global-set-key [(C j)] 'drag-stuff-down)
+
+;; Treemacs toggle
+(map! :leader
+      :desc "Treemacs" "e" #'treemacs)
+
+;; Terminal
+(map! :leader
+     (:prefix ("t" . "Toggles")
+     :desc "VTerm toggle" "t" #'vterm))
+
+;; Tabs
+(setq centaur-tabs-excluded-prefixes '("*Messages*" "*scratch*" "*doom*" "*epc" "*helm" "*Helm" " *which" "*Compile-Log*" "*lsp" "*LSP" "*company" "*Flycheck" "*Ediff" "*ediff" "*tramp" " *Mini" "*help" "*straight" " *temp" "*Help"))
+
+;; Dashboard
+(setq fancy-splash-image "~/.doom.d/images/dashboard.png")
+
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
 (setq org-directory "~/org/")
-
 
 ;; Whenever you reconfigure a package, make sure to wrap your config in an
 ;; `after!' block, otherwise Doom's defaults may override your settings. E.g.
