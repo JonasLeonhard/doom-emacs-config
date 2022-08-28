@@ -42,9 +42,6 @@
 ;; startup
 (custom-set-variables '(initial-frame-alist (quote ((fullscreen . maximized))))) ;; start emacs maximized
 
-;; wich-keys
-(setq wich-key-idle-delay 0.5)
-
 ;; replace evil- in wichkeys
 (setq which-key-allow-multiple-replacements t)
 (after! which-key
@@ -61,6 +58,7 @@
 ;; Treemacs toggle
 (map! :leader
       :desc "Treemacs" "e" #'treemacs)
+(setq treemacs-position 'right)
 
 ;; Terminal
 (map! :leader
