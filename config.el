@@ -61,6 +61,8 @@
       :desc "Treemacs" "e" #'treemacs)
 (setq treemacs-position 'right)
 
+(setq doom-themes-treemacs-theme "doom-colors")
+
 ;; Terminal
 (map! :leader
      (:prefix ("t" . "Toggles")
@@ -71,6 +73,9 @@
 
 ;; Dashboard
 (setq fancy-splash-image "~/.doom.d/images/dashboard.png")
+
+;; Indent Guides
+(setq highlight-indent-guides-responsive "top") ;; highlight the current_context
 
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
