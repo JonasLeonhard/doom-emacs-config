@@ -68,7 +68,13 @@
      (:prefix ("t" . "Toggles")
      :desc "VTerm toggle" "t" #'vterm))
 
-;; Tabs
+;; Tabs & Buffers
+(map! :leader (:prefix ("T" . "Tabs") :desc "Forward" "j" 'centaur-tabs-forward))
+(map! :leader (:prefix ("T" . "Tabs") :desc "Backwards" "k" 'centaur-tabs-backward))
+(map! :leader (:prefix ("T" . "Tabs") :desc "Close" "c" 'kill-buffer))
+(map! :leader (:prefix ("T" . "Tabs") :desc "New" "n" 'centaur-tabs--create-new-tab))
+
+
 (setq centaur-tabs-excluded-prefixes '("*Messages*" "*scratch*" "*doom*" "*epc" "*helm" "*Helm" " *which" "*Compile-Log*" "*lsp" "*LSP" "*company" "*Flycheck" "*Ediff" "*ediff" "*tramp" " *Mini" "*help" "*straight" " *temp" "*Help"))
 
 ;; Dashboard
