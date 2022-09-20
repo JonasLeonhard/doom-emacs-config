@@ -95,6 +95,8 @@
 (tool-bar-lines . 0)
 (undecorated . t)))
 (toggle-frame-fullscreen)
+(setq confirm-kill-emacs nil) ;; no confirm on close
+
 
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
