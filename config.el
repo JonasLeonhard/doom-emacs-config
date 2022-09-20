@@ -77,6 +77,15 @@
 ;; Indent Guides
 (setq highlight-indent-guides-responsive "top") ;; highlight the current_context
 
+;; Emacs Window: start every frame maximized + no title bar
+(setq frame-resize-pixelwise t)
+(setq default-frame-alist '(
+(vertical-scroll-bars . nil)
+(horizontal-scroll-bars . nil)
+(tool-bar-lines . 0)
+(undecorated . t)))
+(toggle-frame-fullscreen)
+
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
 (setq org-directory "~/org/")
