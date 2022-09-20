@@ -30,6 +30,7 @@
 ;; wasn't installed correctly. Font issues are rarely Doom issues!
 (setq doom-font (font-spec :family "MesloLGSDZ Nerd Font" :size 14 :weight 'normal))
 (setq doom-variable-pitch-font (font-spec :family "MesloLGSDZ Nerd Font" :size 14 :weight 'normal))
+(setq doom-emoji-fallback-font-families '("icons-in-terminal")) ;; fix powerline font not working in vterm
 
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
@@ -51,6 +52,9 @@
    '(("" . "\\`+?evil[-:]?\\(?:a-\\)?\\(.*\\)") . (nil . "◂\\1"))
    '(("\\`g s" . "\\`evilem--?motion-\\(.*\\)") . (nil . "◃\\1"))
    ))
+
+;; wichkey popup delay
+(setq which-key-idle-delay 0.1)
 
 ;; keybinds
 (global-set-key [(C k)] 'drag-stuff-up)
